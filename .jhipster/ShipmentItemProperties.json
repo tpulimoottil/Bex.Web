@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "height",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "length",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "width",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "weight",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170609062945",
+    "entityTableName": "shipment_item_properties",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

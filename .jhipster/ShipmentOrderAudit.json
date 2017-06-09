@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "order",
+            "otherEntityName": "shipmentOrder",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "ShipmentOrderStatus",
+            "fieldValues": "ITEM_RECEIVED,PACKED,SHIPPED,RETURNED,DAMAGED,REJECTED,RETURNED_BY_CUSTOMER"
+        },
+        {
+            "fieldName": "comments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "additionalComments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdOn",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170609062941",
+    "entityTableName": "shipment_order_audit",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

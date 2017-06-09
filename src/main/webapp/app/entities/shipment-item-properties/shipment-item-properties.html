@@ -1,0 +1,62 @@
+<div>
+    <h2>Shipment Item Properties</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="shipment-item-properties.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Shipment Item Properties
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Height</span></th>
+                    <th><span>Length</span></th>
+                    <th><span>Width</span></th>
+                    <th><span>Weight</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="shipmentItemProperties in vm.shipmentItemProperties track by shipmentItemProperties.id">
+                    <td><a ui-sref="shipment-item-properties-detail({id:shipmentItemProperties.id})">{{shipmentItemProperties.id}}</a></td>
+                    <td>{{shipmentItemProperties.height}}</td>
+                    <td>{{shipmentItemProperties.length}}</td>
+                    <td>{{shipmentItemProperties.width}}</td>
+                    <td>{{shipmentItemProperties.weight}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="shipment-item-properties-detail({id:shipmentItemProperties.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="shipment-item-properties.edit({id:shipmentItemProperties.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="shipment-item-properties.delete({id:shipmentItemProperties.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

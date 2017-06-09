@@ -1,0 +1,70 @@
+<div>
+    <h2>Shipment Order Audits</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="shipment-order-audit.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Shipment Order Audit
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Status</span></th>
+                    <th><span>Comments</span></th>
+                    <th><span>Additional Comments</span></th>
+                    <th><span>Created On</span></th>
+                    <th><span>Order</span></th>
+                    <th><span>User</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="shipmentOrderAudit in vm.shipmentOrderAudits track by shipmentOrderAudit.id">
+                    <td><a ui-sref="shipment-order-audit-detail({id:shipmentOrderAudit.id})">{{shipmentOrderAudit.id}}</a></td>
+                    <td>{{shipmentOrderAudit.status}}</td>
+                    <td>{{shipmentOrderAudit.comments}}</td>
+                    <td>{{shipmentOrderAudit.additionalComments}}</td>
+                    <td>{{shipmentOrderAudit.createdOn | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="shipment-order-detail({id:shipmentOrderAudit.orderId})">{{shipmentOrderAudit.orderId}}</a>
+                    </td>
+                    <td>
+                        {{shipmentOrderAudit.userId}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="shipment-order-audit-detail({id:shipmentOrderAudit.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="shipment-order-audit.edit({id:shipmentOrderAudit.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="shipment-order-audit.delete({id:shipmentOrderAudit.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

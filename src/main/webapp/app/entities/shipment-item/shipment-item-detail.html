@@ -1,0 +1,67 @@
+
+<div>
+    <h2><span>Shipment Item</span> {{vm.shipmentItem.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.shipmentItem.name}}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+            <span>{{vm.shipmentItem.description}}</span>
+        </dd>
+        <dt><span>Long Description</span></dt>
+        <dd>
+            <span>{{vm.shipmentItem.longDescription}}</span>
+        </dd>
+        <dt><span>Price</span></dt>
+        <dd>
+            <span>{{vm.shipmentItem.price}}</span>
+        </dd>
+        <dt><span>Free Storage Ending Date</span></dt>
+        <dd>
+            <span>{{vm.shipmentItem.freeStorageEndingDate | date:'medium'}}</span>
+        </dd>
+        <dt><span>Created On</span></dt>
+        <dd>
+            <span>{{vm.shipmentItem.createdOn | date:'medium'}}</span>
+        </dd>
+        <dt><span>Status</span></dt>
+        <dd>
+            <span>{{vm.shipmentItem.status}}</span>
+        </dd>
+        <dt><span>Item Properties</span></dt>
+        <dd>
+            <a ui-sref="shipment-item-properties-detail({id:vm.shipmentItem.itemPropertiesId})">{{vm.shipmentItem.itemPropertiesId}}</a>
+        </dd>
+        <dt><span>Created By</span></dt>
+        <dd>
+            {{vm.shipmentItem.createdById}}
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+            {{vm.shipmentItem.userId}}
+        </dd>
+        <dt><span>Category</span></dt>
+        <dd>
+            <a ui-sref="shipment-item-category-detail({id:vm.shipmentItem.categoryId})">{{vm.shipmentItem.categoryId}}</a>
+        </dd>
+        <dt><span>Order</span></dt>
+        <dd>
+            <a ui-sref="shipment-order-detail({id:vm.shipmentItem.orderId})">{{vm.shipmentItem.orderId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="shipment-item-detail.edit({id:vm.shipmentItem.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

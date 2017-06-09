@@ -1,0 +1,72 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myShipmentOrderAuditLabel">Create or edit a Shipment Order Audit</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.shipmentOrderAudit.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.shipmentOrderAudit.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_status">Status</label>
+            <select class="form-control" name="status" ng-model="vm.shipmentOrderAudit.status" id="field_status">
+                <option value="ITEM_RECEIVED">ITEM_RECEIVED</option>
+                <option value="PACKED">PACKED</option>
+                <option value="SHIPPED">SHIPPED</option>
+                <option value="RETURNED">RETURNED</option>
+                <option value="DAMAGED">DAMAGED</option>
+                <option value="REJECTED">REJECTED</option>
+                <option value="RETURNED_BY_CUSTOMER">RETURNED_BY_CUSTOMER</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_comments">Comments</label>
+            <input type="text" class="form-control" name="comments" id="field_comments"
+                    ng-model="vm.shipmentOrderAudit.comments"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_additionalComments">Additional Comments</label>
+            <input type="text" class="form-control" name="additionalComments" id="field_additionalComments"
+                    ng-model="vm.shipmentOrderAudit.additionalComments"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_createdOn">Created On</label>
+                <div class="input-group">
+                    <input id="field_createdOn" type="text" class="form-control" name="createdOn" datetime-picker="{{dateformat}}" ng-model="vm.shipmentOrderAudit.createdOn" is-open="vm.datePickerOpenStatus.createdOn"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdOn')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_order">Order</label>
+            <select class="form-control" id="field_order" name="order" ng-model="vm.shipmentOrderAudit.orderId" ng-options="shipmentOrder.id as shipmentOrder.id for shipmentOrder in vm.shipmentorders"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.shipmentOrderAudit.userId" ng-options="user.id as user.id for user in vm.users"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "shipmentAddress",
+            "otherEntityName": "shipmentAddress",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "shipmentOrder"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "audits",
+            "otherEntityName": "shipmentOrderAudit",
+            "otherEntityRelationshipName": "order"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "shipmentItems",
+            "otherEntityName": "shipmentItem",
+            "otherEntityRelationshipName": "order"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "ShipmentOrderStatus",
+            "fieldValues": "ITEM_RECEIVED,PACKED,SHIPPED,RETURNED,DAMAGED,REJECTED,RETURNED_BY_CUSTOMER"
+        },
+        {
+            "fieldName": "createdOn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170609062940",
+    "entityTableName": "shipment_order",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

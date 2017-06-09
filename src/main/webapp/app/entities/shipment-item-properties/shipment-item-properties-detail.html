@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span>Shipment Item Properties</span> {{vm.shipmentItemProperties.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Height</span></dt>
+        <dd>
+            <span>{{vm.shipmentItemProperties.height}}</span>
+        </dd>
+        <dt><span>Length</span></dt>
+        <dd>
+            <span>{{vm.shipmentItemProperties.length}}</span>
+        </dd>
+        <dt><span>Width</span></dt>
+        <dd>
+            <span>{{vm.shipmentItemProperties.width}}</span>
+        </dd>
+        <dt><span>Weight</span></dt>
+        <dd>
+            <span>{{vm.shipmentItemProperties.weight}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="shipment-item-properties-detail.edit({id:vm.shipmentItemProperties.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

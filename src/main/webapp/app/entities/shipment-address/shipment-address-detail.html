@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span>Shipment Address</span> {{vm.shipmentAddress.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Attention To</span></dt>
+        <dd>
+            <span>{{vm.shipmentAddress.attentionTo}}</span>
+        </dd>
+        <dt><span>Address Line 1</span></dt>
+        <dd>
+            <span>{{vm.shipmentAddress.addressLine1}}</span>
+        </dd>
+        <dt><span>Address Line 2</span></dt>
+        <dd>
+            <span>{{vm.shipmentAddress.addressLine2}}</span>
+        </dd>
+        <dt><span>Landmark</span></dt>
+        <dd>
+            <span>{{vm.shipmentAddress.landmark}}</span>
+        </dd>
+        <dt><span>Street</span></dt>
+        <dd>
+            <span>{{vm.shipmentAddress.street}}</span>
+        </dd>
+        <dt><span>Postal Code</span></dt>
+        <dd>
+            <span>{{vm.shipmentAddress.postalCode}}</span>
+        </dd>
+        <dt><span>State</span></dt>
+        <dd>
+            <a ui-sref="state-detail({id:vm.shipmentAddress.stateId})">{{vm.shipmentAddress.stateId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="shipment-address-detail.edit({id:vm.shipmentAddress.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

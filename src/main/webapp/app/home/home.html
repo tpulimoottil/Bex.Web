@@ -1,0 +1,49 @@
+<div ng-cloak>
+    <div class="row">
+        <div class="col-md-4">
+            <span class="hipster img-responsive img-rounded"></span>
+        </div>
+        <div class="col-md-8">
+            <div ng-switch="vm.isAuthenticated()">
+                <h1 ng-switch-when="true">Welcome, {{vm.account.firstName}}!</h1>
+                <h1 ng-switch-when="false">Welcome to Border Exchange!</h1>
+            </div>
+
+            <div ng-switch="vm.isAuthenticated()">
+                <h5>Your Personal Indian Address :</h5>
+                <div class="alert alert-success" ng-switch-when="true">
+                    <p class="lead"> {{vm.account.firstName}} {{vm.account.firstName}}<br/>
+                        BEX{{vm.account.id}},A301, Skylark Zenith,<br/>
+                        Basapura, Bangalore -560100,<br/>
+                        India, IN</p>
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false">
+                    If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the
+                    default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user"
+                    and password="user").
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false">
+                    You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
+                </div>
+            </div>
+
+            <p>
+                If you have any question on Border Exchange:
+            </p>
+
+            <ul>
+                <li><a href="#" target="_blank">How BorderExchanage Works</a></li>
+                <li><a href="#" target="_blank">Terms & Conditions</a></li>
+                <li><a href="#" target="_blank">JHipster on Stack Overflow</a></li>
+                <li><a href="#" target="_blank">Privacy Policy</a></li>
+            </ul>
+
+            <p>
+                <span>Follow us at </span>&nbsp;<a
+                href="https://www.facebook.com/borderexchange/" target="_blank">Facebook</a>!
+            </p>
+        </div>
+    </div>
+</div>
