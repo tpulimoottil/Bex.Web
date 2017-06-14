@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span>User Address</span> {{vm.userAddress.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Attention To</span></dt>
+        <dd>
+            <span>{{vm.userAddress.attentionTo}}</span>
+        </dd>
+        <dt><span>Address Line 1</span></dt>
+        <dd>
+            <span>{{vm.userAddress.addressLine1}}</span>
+        </dd>
+        <dt><span>Address Line 2</span></dt>
+        <dd>
+            <span>{{vm.userAddress.addressLine2}}</span>
+        </dd>
+        <dt><span>Landmark</span></dt>
+        <dd>
+            <span>{{vm.userAddress.landmark}}</span>
+        </dd>
+        <dt><span>Street</span></dt>
+        <dd>
+            <span>{{vm.userAddress.street}}</span>
+        </dd>
+        <dt><span>Postal Code</span></dt>
+        <dd>
+            <span>{{vm.userAddress.postalCode}}</span>
+        </dd>
+        <dt><span>State</span></dt>
+        <dd>
+            <a ui-sref="state-detail({id:vm.userAddress.stateId})">{{vm.userAddress.stateId}}</a>
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+            {{vm.userAddress.userId}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="manage-address-detail.edit({id:vm.userAddress.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

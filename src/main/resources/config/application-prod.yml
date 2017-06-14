@@ -23,7 +23,7 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://localhost:3306/BexWeb?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
-        password:
+        password: BexStage123
         hikari:
             data-source-properties:
                 cachePrepStmts: true
@@ -41,10 +41,16 @@ spring:
             hibernate.generate_statistics: false
             hibernate.cache.region.factory_class: io.github.jhipster.config.jcache.NoDefaultJCacheRegionFactory
     mail:
-        host: localhost
-        port: 25
-        username:
-        password:
+        host: smtp.gmail.com
+        port: 587
+        username: thomas@borderexchange.com  #Replace this field with your Gmail username.
+        password: Mascosis@123           #Replace this field with your Gmail password.
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp.gmail.com
     thymeleaf:
         cache: true
 
@@ -69,7 +75,7 @@ liquibase:
 #        keyAlias: BexWeb
 # ===================================================================
 server:
-    port: 8080
+    port: 80
     compression:
         enabled: true
         mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
@@ -98,8 +104,8 @@ jhipster:
                 token-validity-in-seconds: 86400
                 token-validity-in-seconds-for-remember-me: 2592000
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: BexWeb@localhost
-        base-url: http://my-server-url-to-change # Modify according to your server's URL
+        from: BorderExchange
+        base-url: http://members.borderexchange.com # Modify according to your server's URL
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         graphite:
